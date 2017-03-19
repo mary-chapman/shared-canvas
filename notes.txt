@@ -1,0 +1,39 @@
+
+WEBSOCKETS:
+
+-computer 1 can send info to server and computer 2 can receive the info from the server
+-server should be able to host html and js files for sketch
+
+--> writing the server platform: NODE.js (other ways also)
+  --> Node is a framework that allows you to:
+    1. host files
+    2. make socket connections
+
+-EXPRESS: a framework to handle running a server, hosting files, etc.
+
+-PUBLIC FOLDER: files that the user will be able to see.
+
+STEPS:
+-create a new folder with a server.js file
+-set up npm init: sets up a config file, sets up a package.json files
+EXPRESS
+-add express: npm install --save express
+-import express module to server.js
+-create an express application called app
+SERVER
+-create a server on port 3000
+PUBLIC FOLDER
+-create a public folder: include files - app.js, index.html
+-use app.use to show the public folder
+SOCKET
+server:
+-add socket package in terminal
+-import socket module into server.js
+-create a function to call a function whenever there is a connection
+client:
+-add script tag in index.html with socket.io cdn
+-in app.js: add a connection function for socket.io
+Connecting the client and server:
+-client side: send socket.emit with a message name and data
+-server side: use socket.on with the message name (from client side) + a callback fn
+-client: add function to handle message coming in along with callback function saying what to do with data
